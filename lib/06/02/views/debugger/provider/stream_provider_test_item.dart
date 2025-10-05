@@ -133,7 +133,7 @@ class SignalLamp extends StatelessWidget {
         Text(
           state.counter.toString(),
           style: TextStyle(
-            fontWeight: FontWeight.bold, fontSize: size/4, color: activeColor,
+            fontWeight: FontWeight.bold, fontSize: size/6, color: activeColor,
           ),
         )
       ],
