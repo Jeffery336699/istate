@@ -24,5 +24,35 @@ FutureOr<int> computation(){
   if (counter % 3 == 0) {
     throw 'error';
   }
+  // FutureOr<T> Function() computation  <==> FutureOr<T> computation()
+  Future(() => 1);
   return counter;
 }
+
+// 在 Dart 中,以下两种函数类型声明方式是完全相同的:
+//
+// 1. **`FutureOr<int> computation()`** - 传统的函数类型声明语法
+// 2. **`FutureOr<int> Function() computation`** - 现代的函数类型声明语法
+//
+// 两者都表示:
+// - 参数名为 `computation`
+// - 类型是一个**无参数**的函数
+// - 该函数返回 `FutureOr<int>` 类型
+//
+// 就像代码注释中说明的那样:
+// ```dart
+// // FutureOr<T> Function() computation  <==> FutureOr<T> computation()
+// ```
+//
+// **推荐使用**: `FutureOr<int> Function() computation` 这种现代语法,因为它更清晰地表达了"这是一个 Function 类型的参数"。
+void foo(FutureOr<int> computation()){
+
+}
+
+void foo1(FutureOr<int> Function() computation){
+
+}
+
+
+
+
